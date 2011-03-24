@@ -91,7 +91,14 @@ describe "Drive Less Challenge" do
               page.should have_content("Log in to use your Facebook account with Drive Less Challenge.")
               fill_in "Email:", :with => "jenmei@blazingcloud.net"
               fill_in "Password:", :with => "webrat"
-              find('input[name=login]').click
+              
+              # The window disappears after the click, so resynchronizing fails
+              driver.options[:resynchronize] = false
+              begin
+                find('input[name=login]').click
+              ensure
+                driver.options[:resynchronize] = true
+              end
             end
           end
 
