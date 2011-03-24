@@ -96,6 +96,8 @@ describe "Drive Less Challenge" do
           end
 
           she "she should be shown her My Trips page" do
+            page.driver.browser.save_screenshot('file.png')
+            save_page
             page.find('div.navigation ol li.current').should have_content("My Trips")
           end
         end
