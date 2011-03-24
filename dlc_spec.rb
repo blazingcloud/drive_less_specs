@@ -71,6 +71,19 @@ describe "Drive Less Challenge" do
         end
       end
 
+      describe "and she clicks on the Facebook button" do
+        before do
+          click_button 'RES_ID_fb_login_image'
+        end
+
+        she "should see a popup window to login with Facebook" do
+          within_window("Login | Facebook") do
+            page.should have_content("Log in to use your Facebook account with Drive Less Challenge.")
+          end
+        end 
+
+      end
+
     end
   end 
 end
