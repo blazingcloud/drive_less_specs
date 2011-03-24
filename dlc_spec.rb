@@ -14,13 +14,13 @@ if sauce_user && sauce_key
   require 'sauce/capybara'
   Sauce.config do |c|
     c.browsers = [
-        ["Windows 2003", "firefox", "3.6."],
+        #["Windows 2003", "firefox", "3.6."],
         #["Windows 2003", "googlechrome", ""],
         #["Windows 2003", "safari", "4."],
         #["Windows 2003", "opera", "11."],
         #["Windows 2003", "firefox", "3.6."],
         #["Windows 2003", "firefox", "3.6."],
-        #["Windows 2008", "iexplore", "9."],
+        ["Windows 2008", "iexplore", "9."],
         #["Windows 2008", "firefox", "4."],
         #["Linux", "firefox", "3.6."]
     ]
