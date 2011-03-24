@@ -85,6 +85,21 @@ describe "Drive Less Challenge" do
           end
         end 
 
+        describe "and she enters her Facebook login information" do
+          before do
+            within_window("Login | Facebook") do
+              page.should have_content("Log in to use your Facebook account with Drive Less Challenge.")
+              fill_in "Email:", :with => "jenmei@blazingcloud.net"
+              fill_in "Password:", :with => "webrat"
+              find('input[name=login]').click
+            end
+          end
+
+          she "she should be shown her My Trips page" do
+            page.find('div.navigation ol li.current').should have_content("My Trips")
+          end
+        end
+
       end
 
     end
