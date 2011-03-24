@@ -73,7 +73,10 @@ describe "Drive Less Challenge" do
 
       describe "and she clicks on the Facebook button" do
         before do
-          click_button 'RES_ID_fb_login_image'
+          # More info:
+          # http://rubydoc.info/gems/selenium-webdriver/0.0.28/Selenium/WebDriver/Find
+          fb_connect = page.driver.browser.find_element(:id, 'RES_ID_fb_login_image')
+          fb_connect.click
         end
 
         she "should see a popup window to login with Facebook" do
